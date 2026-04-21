@@ -43,7 +43,7 @@ d3.csv('./data/athlete_events.csv', d3.autoType)
 
     const top3Teams = sortedTeams.slice(0, 3).map(d => d.team);
     const colors = { 
-        [top3Teams[0]]: '#378ADD', 
+        [top3Teams[0]]: '#238ADD', 
         [top3Teams[1]]: '#D4537E', 
         [top3Teams[2]]: '#639922' 
     };
@@ -129,4 +129,6 @@ d3.csv('./data/athlete_events.csv', d3.autoType)
             .attr('fill', colors[team])
             .attr('rx', 2);
     });
+
+    
 })
