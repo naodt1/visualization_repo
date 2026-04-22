@@ -3,8 +3,9 @@ import * as d3 from 'd3'
 d3.csv('./data/athlete_events.csv', d3.autoType)
 .then(athletes => {
     const athleticsMedalists = athletes.filter(d => 
-        d.Sport === 'Athletics' && d.Medal !== null
-    );
+    d.Sport === 'Athletics' && 
+    (d.Medal === 'Gold' || d.Medal === 'Silver' || d.Medal === 'Bronze')
+);
 
     const medalsByTeam = d3.rollup(
         athleticsMedalists,
