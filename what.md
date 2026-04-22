@@ -1,4 +1,11 @@
+### Group:
+
+Lab Group 10,
+Naod Tadele - 129265,
+Saba Rehman - 128591
+
 ### Task 1: What
+
 
 #### Dataset type:
 The dataset type is a "Table" consisting of Attributes and Items.
