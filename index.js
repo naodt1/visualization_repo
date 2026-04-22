@@ -17,21 +17,17 @@ d3.csv('./data/athlete_events.csv', d3.autoType)
         .sort((a, b) => d3.descending(a.count, b.count))
         .slice(0, 10);
 
-    // ── Configuration ──────────────────────────────────────────────────
     const width = 800; 
     const height = 500; 
-    const margin = { top: 30, bottom: 70, right: 20, left: 70 }; 
+    const margin = { top: 30, bottom: 100, right: 20, left: 70 }; 
 
-    // Create the SVG container
-    // Ensure you have an element with id="visualization" or change to d3.select('body').append('svg')
     const svg = d3.select('body')
         .append('svg')
         .attr('width', width)
         .attr('height', height)
         .style('display', 'block')
-        .style('margin', 'auto'); // Centers the SVG itself
+        .style('margin', 'auto'); 
 
-    // ── Scales (Margins included in Range) ─────────────────────────────
     
     const x = d3.scaleBand()
         .domain(top10Teams.map(d => d.team))
@@ -43,9 +39,7 @@ d3.csv('./data/athlete_events.csv', d3.autoType)
         .nice()
         .range([height - margin.bottom, margin.top]);
 
-    // ── Draw Axes ──────────────────────────────────────────────────────
-    
-    // X-Axis
+
     svg.append('g')
         .attr('transform', `translate(0, ${height - margin.bottom})`)
         .call(d3.axisBottom(x))
@@ -88,7 +82,7 @@ d3.csv('./data/athlete_events.csv', d3.autoType)
         .data(top10Teams)
         .join('text')
         .attr('x', d => x(d.team) + x.bandwidth() / 2)
-        .attr('y', d => y(d.count) + 15) // 15px inside the bar
+        .attr('y', d => y(d.count) + 15)
         .attr('text-anchor', 'middle')
         .style('fill', 'white')
         .style('font-size', '12px')
@@ -113,7 +107,9 @@ svg.append('text')
     .attr('transform', 'rotate(-90)')
     .attr('text-anchor', 'middle')
     .style('font-size', '14px')
+    .style('font-weight', 'bold')
     .text('Number of Medals Won');
+    
 
 
 svg.append('text')
@@ -121,5 +117,6 @@ svg.append('text')
     .attr('y', height - 12) 
     .attr('text-anchor', 'middle')
     .style('font-size', '14px')
+    .style('font-weight', 'bold')
     .text('Teams');
 });
