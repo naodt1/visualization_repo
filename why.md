@@ -11,9 +11,12 @@ The best teams are:
 1. {Identify, Extreme}
 2. {Discover, Trend}
 
+
+
 **Q2: Does the nationality and the location of the games have an influence on a player's performance?**
 
 1. {Discover, Dependency}
+
 
 
 #### Part 2: Questions to the data
